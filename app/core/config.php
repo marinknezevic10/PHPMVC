@@ -7,7 +7,7 @@ define("WEBSITE_NAME", "My Webiste");
 /*set database variables*/
 
 define('DB_TYPE','mysql');
-define('DB_NAME','minima_db');
+define('DB_NAME','mvcproject_db');
 define('DB_USER','root');
 define('DB_PASS','');
 define('DB_HOST','localhost');

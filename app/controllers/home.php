@@ -4,10 +4,15 @@ class Home extends Controller//controller for the home page and index method
 {
     function index()
     {
-        //$image_class = $this->loadModel("image_class");
-        //checking if its correct
-        //show($image_class);
-        $this->view("home");//calling function view
+        //reading from the database
+        //$DB = new Database();
+        //$data['result'] = $DB->read("select * from image");
+
+        $data['page_title'] = "Home";
+
+        //show($data[0]->image);//showing particular image
+
+        $this->view("home", $data);//calling function view
     }
 
     

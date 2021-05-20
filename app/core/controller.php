@@ -3,7 +3,10 @@
 //functionality that is used in all controllers
 class Controller
 {
-    protected function view($view)//reads from the view directory and displays page for user
+    //since we assigned variable $data any file below that we include will have $data variable
+    //that way we are able to transfer our data
+
+    protected function view($view, $data = [])//reads from the view directory and displays page for user
     {
         if(file_exists("../app/views/". $view .".php"))
         {
