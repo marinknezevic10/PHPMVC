@@ -42,7 +42,9 @@ class App//collection of functions
     private function splitURL()
     {
         //filter_sanitaze removes illegal characters from url
-        return explode("/", filter_var(trim($_GET['url'], "/"), FILTER_SANITIZE_URL));//explode converts string into an array,trim removes /
+        //if the url is set get it if not redirect to home page
+        $url = isset($_GET['url']) ? $_GET['url'] : "home";
+        return explode("/", filter_var(trim($url, "/"), FILTER_SANITIZE_URL));//explode converts string into an array,trim removes /
     }
 }
 
