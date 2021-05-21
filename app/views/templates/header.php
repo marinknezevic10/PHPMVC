@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project</title>
+    <title><?= $data['page_title'] . " | " . WEBSITE_NAME ?></title>
     <link rel="stylesheet" href="<?=ASSETS?>templates/css/components.css">
     <link rel="stylesheet" href="<?=ASSETS?>templates/css/icons.css">
     <link rel="stylesheet" href="<?=ASSETS?>templates/css/responsee.css">
@@ -39,7 +39,10 @@
               <ul class="right chevron">
                 <li><a href="<?=ROOT?>home">Home</a></li>
                 <li><a href="<?=ROOT?>about">About Us</a></li>             
-                <li><a href="<?=ROOT?>contact">Cntact</a></li>
+                <li><a href="<?=ROOT?>contact">Contact</a></li>
+                <li><a href="<?=ROOT?>login">Login</a></li>
+                <li><a href="<?=ROOT?>signup">Signup</a></li>
+                <li><a href="<?=ROOT?>upload">Upload</a></li>
               </ul>
           </div>
           </div>  
