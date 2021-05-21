@@ -12,7 +12,7 @@ class Home extends Controller//controller for the home page and index method
 
         //show($data[0]->image);//showing particular image
 
-        $this->view("home", $data);//calling function view
+        $this->view("templates/index", $data);//calling function view
     }
 
     
