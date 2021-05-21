@@ -131,7 +131,6 @@
           </section>
         </article>
       </main>
-      
-      <!-- FOOTER -->
+
       <!-- loading footer-->
 <?php $this->view("templates/footer", $data);?>
