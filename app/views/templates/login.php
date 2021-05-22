@@ -103,7 +103,7 @@ body {
 
 <?php $this->view("templates/header",$data);?>
 
-<div class="login-page"><h2>Login</h2>
+<div class="login-page">
   <p><?php// check_message() ?></p>
   <div class="form">
     <form class="register-form" method="post">
