@@ -2,11 +2,11 @@
 
 class User
 {
-    function login()
+    function login($POST)
     {
         $DB = new Database();
 
-        $_SESSION['error'] = ""
+        $_SESSION['error'] = "";
         if(isset($POST['username']) && ($POST['password']))
         {
         //assigning username and password to an array
@@ -25,17 +25,40 @@ class User
                 $_SESSION['user_url'] = $data[0]->url_adress;
             }else{
             
-                $_SESSION['error'] = "wrong username or password"
+                $_SESSION['error'] = "wrong username or password";
             }
         }else{
 
-            $_SESSION['error'] = "please enter valid username and password"
+            $_SESSION['error'] = "please enter valid username and password";
         }
     }
 
-    function signup()
+    function signup($POST)
     {
 
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($POST['username']) && ($POST['password']))
+        {
+    
+        $arr['username'] = $POST['username'];
+        $arr['password'] = $POST['password'];
+        $arr['email'] = $POST['email'];
+
+        $query = "insert into users (username,password,email) values(:username,:password,:email)";
+        $data = $DB->write($query, $arr);
+            if($data)
+            {
+
+                header("Location:" . ROOT . "login");
+                die;
+            }
+
+        }else{
+
+            $_SESSION['error'] = "please enter valid username and password";
+        }
     }
 
     function check_login()//checking if user is logged in
