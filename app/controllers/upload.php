@@ -9,5 +9,12 @@ class Upload extends Controller
         $this->view("templates/upload", $data);
     }
 
+    function image()
+    {
+        $data['page_title'] = "Upload";
+
+        $this->view("templates/upload", $data);
+    }
+
     
 }
