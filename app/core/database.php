@@ -38,7 +38,7 @@ class Database
         
     }
 
-    private function write($query, $data = [])
+    public function write($query, $data = [])
     {
         $DB = $this->db_connect();
         $stm = $DB->prepare($query);//prepare for protection
