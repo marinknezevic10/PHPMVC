@@ -15,7 +15,7 @@ class Upload extends Controller
         $user = $this->loadModel("user");
 
         //if the person is not logged in redirect them to login page
-        if(!$result = $user->check_login())
+        if(!$result = $user->check_logged_in())
         {
             header("Location:" . ROOT . "login");
             die;

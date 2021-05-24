@@ -20,7 +20,8 @@ class Database
         $DB = $this->db_connect();
         $stm = $DB->prepare($query);//prepare for protection
 
-        if(count($data) == 0){
+        if(count($data) == 0)
+        {
             $stm = $DB->query($query);
             $check = 0;
             if($stm){
@@ -30,7 +31,8 @@ class Database
             $check =  $stm->execute($data);
         }
 
-        if($check){
+        if($check)
+        {
             $data = $stm->fetchAll(PDO::FETCH_OBJ);
             if(is_array($data) && count($data) > 0)
             {

@@ -1,5 +1,7 @@
 <?php $this->view("templates/header", $data);?>
 
+<p><?php check_message() ?></p>
+
 <section class="section background-white">
             <div class="s-12 m-12 l-4 center">
               <h4 class="text-size-20 margin-bottom-20 text-dark text-center">Upload image</h4>

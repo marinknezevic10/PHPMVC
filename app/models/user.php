@@ -55,7 +55,7 @@ class User
             if($data)
             {
 
-                header("Location:" . ROOT . "login");
+                header("Location:" . ROOT . "home");
                 die;
             }
 
@@ -65,7 +65,7 @@ class User
         }
     }
 
-    function check_login()//checking if user is logged in
+    function check_logged_in()//checking if user is logged in
     {
         $DB = new Database();
         //if user_url is set read from the database
@@ -73,7 +73,7 @@ class User
         {
             $arr['user_url'] = $_SESSION['user_url'];
 
-        $query = "select * from users where user_address = :user_url limit 1";
+        $query = "select * from users where url_address = :user_url limit 1";
         $data = $DB->read($query, $arr);
             if(is_array($data))
             {
