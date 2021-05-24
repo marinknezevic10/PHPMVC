@@ -33,6 +33,11 @@
               <img class="logo-after" src="<?=ASSETS?>templates/img/logo-dark.png" alt="">
             </a>
           </div>
+          
+          <?php if(isset($_SESSION['user_name'])): //if logged in say "Hi and users name" ?>
+          Hi <?= $_SESSION['user_name']?>
+          <?php endif; ?>
+
           <div class="s-12 l-10">
             <div class="top-nav right">
               <p class="nav-text"></p>
@@ -40,8 +45,13 @@
                 <li><a href="<?=ROOT?>home">Home</a></li>
                 <li><a href="<?=ROOT?>about">About Us</a></li>             
                 <li><a href="<?=ROOT?>contact">Contact</a></li>
-                <li><a href="<?=ROOT?>login">Login</a></li>
-                <li><a href="<?=ROOT?>signup">Signup</a></li>
+
+                <?php if(!isset($_SESSION['user_name'])): //we dont see login and signup button if we are logged in?>
+                  <li><a href="<?=ROOT?>login">Login</a></li>
+                  <li><a href="<?=ROOT?>signup">Signup</a></li>
+                <?php else: ?>
+                  <li><a href="<?=ROOT?>logout">Logout</a></li>
+                <?php endif; ?>
                 <li><a href="<?=ROOT?>upload">Upload</a></li>
               </ul>
           </div>
