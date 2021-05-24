@@ -20,9 +20,11 @@ class User
             {
                 //logged in
                 //query and data are array of objects but we want just the first result, $data[0]
-                $_SESSION['user_id'] = $data[0]->userid;
                 $_SESSION['user_name'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
+
+                header("Location:" . ROOT . "home");
+                die;
             }else{
             
                 $_SESSION['error'] = "wrong username or password";
@@ -75,7 +77,7 @@ class User
         $data = $DB->read($query, $arr);
             if(is_array($data))
             {
-                $_SESSION['user_id'] = $data[0]->userid;
+ 
                 $_SESSION['user_name'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
                 
