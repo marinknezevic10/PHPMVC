@@ -26,3 +26,14 @@ function get_random_string_max($length) {
 
 	return $text;
 }
+
+//checking for error messages
+function check_message()
+{
+    //if is set and its not empty
+    if(isset($_SESSION['error']) && $_SESSION['error'] !="")
+    {
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+}
