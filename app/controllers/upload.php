@@ -21,7 +21,7 @@ class Upload extends Controller
             die;
         }
         
-        //if title and file isset upload the image
+        //if title and file are set upload the image
         if(isset($_POST['title']) && isset($_FILES['file']))
         {
             $uploader = $this->loadModel("upload_file");
