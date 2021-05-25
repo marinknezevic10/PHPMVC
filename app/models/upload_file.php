@@ -2,20 +2,26 @@
 
 class Upload_file
 {
-    function upload()
+    function upload($POST, $FILES)
     {
         $DB = new Database();
 
-        if(isset($POST['username']) && ($POST['password']))
+        if(isset($POST['title']) && ($FILES['file']))
         {
-    
-        $arr['username'] = $POST['username'];
-        $arr['password'] = $POST['password'];
-        $arr['email'] = $POST['email'];
+
+        //upload file
+        show($POST);
+        show($FILES);
+        die;
+        move_uploaded_file($FILES['file']['tmp_name'], destination);
+        
+        //save to db
+        $arr['title'] = $POST['title'];
+        $arr['description'] = $POST['description'];
         $arr['url_address'] = get_random_string_max(60);
         $arr['date'] = date("Y-m-d H:i:s");
 
-        $query = "insert into users (username,password,email,url_address,date) values(:username,:password,:email,:url_address,:date)";
+        $query = "insert into imagess (title,description,url_address,date) values(:title,:description,:url_address,:date)";
         $data = $DB->write($query, $arr);
             if($data)
             {
