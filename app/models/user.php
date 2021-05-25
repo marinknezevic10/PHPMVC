@@ -86,5 +86,14 @@ class User
         }
         return false;
     }
+
+    function logout()
+    {
+        unset($_SESSION['user_name']);
+        unset($_SESSION['user_url']);
+
+        header("Location:" . ROOT . "home");
+                die;
+    }
                 
 }
