@@ -20,12 +20,13 @@ class Posts
     function get_one($link)
     {
         $query = "select * from images where url_address = :link limit 1";
+        $arr['link'] = $link;
 
         $DB = new Database();
-        $data = $DB->read($query);
+        $data = $DB->read($query, $arr);
         if(is_array($data))
         {
-            return $data;
+            return $data[0];
         }
 
         return false;

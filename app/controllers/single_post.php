@@ -1,6 +1,6 @@
 <?php
 
-class Single Post extends Controller
+class Single_post extends Controller
 {
     function index($link = '')
     {
@@ -21,7 +21,7 @@ class Single Post extends Controller
             $data['post'] = $result;
             
             $data['page_title'] = "Single Post";
-            $this->view("templates/index", $data);
+            $this->view("templates/single_post", $data);
         }    
     }
   
