@@ -18,13 +18,13 @@ class Home extends Controller//controller for the home page and index method
 
         $data['posts'] = $result;
 
-        //image cropping
+        
         $image_class = $this->loadModel("image_class");
-
+        //image cropping
         if(is_array($data['posts']))
         {
             foreach ($data['posts'] as $key => $value) {
-                # code...
+                
                 $data['posts'][$key]->image = $image_class->get_thumbnail($data['posts'][$key]->image);
             }
         }
