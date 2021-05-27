@@ -6,7 +6,7 @@ class Home extends Controller//controller for the home page and index method
     {
         //reading from the database
         //$DB = new Database();
-        //$data['result'] = $DB->read("select * from image");
+        //$data['result'] = $DB->read("select * from images");
 
         $data['page_title'] = "Home";
 
@@ -16,9 +16,12 @@ class Home extends Controller//controller for the home page and index method
         //loading function from model
         $result = $posts->get_all();
 
-        $data['posts'] = $result;
+        //loading pagination sending data to home controller
+        $pagination = $this->loadModel("pagination");
+        $data['prev_page'] = $pagination->generate_link($pagination->current_page_number() - 1);
+        $data['next_page'] = $pagination->generate_link($pagination->current_page_number() + 1);
 
-        
+        $data['posts'] = $result;
         $image_class = $this->loadModel("image_class");
         //image cropping
         if(is_array($data['posts']))

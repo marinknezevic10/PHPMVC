@@ -22,7 +22,7 @@ class Pagination
         $url = isset($this->URL['url']) ? $this->URL['url'] : "";
 
         $num = 0;
-        foreach ($this->url as $key => $value) {
+        foreach ($this->URL as $key => $value) {
             # code...
             $num++;
             if($num == 1)

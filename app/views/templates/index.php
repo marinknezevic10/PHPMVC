@@ -38,8 +38,8 @@
         <br>
         <!-- pagination-->
         <section>
-            <a href=""><input type="button" class="s-12 submit-form button background-primary text-white" style="width: 200px;" value="Prev"></a>
-            <a href=""><input type="button" class="s-12 submit-form button background-primary text-white" style="width: 200px; float:right;" value="Next"></a>
+            <a href="<?= $data['prev_page'] ?>"><input type="button" class="s-12 submit-form button background-primary text-white" style="width: 200px;" value="Prev"></a>
+            <a href="<?= $data['next_page'] ?>"><input type="button" class="s-12 submit-form button background-primary text-white" style="width: 200px; float:right;" value="Next"></a>
         </section>
       </main>
       
