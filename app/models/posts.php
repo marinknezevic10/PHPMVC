@@ -5,7 +5,12 @@ class Posts
     //reading from database
     function get_all()
     {
-        $query = "select * from images order by id desc limit 12";
+        //number of images per page
+        $limit = 10;
+
+        //tells database to give next 10 posts
+        $offset = (page_number - 1) * $limit;
+        $query = "select * from images order by id desc limit $limit offset $offset";
 
         $DB = new Database();
         $data = $DB->read($query);
